@@ -10,9 +10,9 @@
 
 :root {
   /*paleta de cores*/
-  --cor-primaria: rgb(0, 0, 0);
-  --cor-secundaria: rgb(28, 28, 28);
-  --cor-terciaria: rgb(220, 220, 220);
+  --cor-primaria: rgb(20, 112, 175);
+  --cor-secundaria: rgb(142, 182, 220);
+  --cor-terciaria: whitesmoke;
   --cor-gradiente: ;
 
 
@@ -24,7 +24,7 @@
 
 
 .header-conteiner {
-  background: none;
+  background: transparent;
   min-width: 100vh;
   min-height: 96px;
 
@@ -88,7 +88,7 @@
       font-size: 14px;
       color: black;
       background: transparent;
-      border: 2px solid black;
+      border: 2px solid var(--cor-primaria);
       border-radius: 4px;
       cursor: pointer;
       overflow: hidden;
@@ -102,13 +102,13 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: black;
+      background: var(--cor-primaria);
       transition: left 0.3s ease;
       z-index: -1;
     }
 
     .btn-login:hover {
-      color: whitesmoke;
+      color: var(--cor-terciaria);
     }
 
     .btn-login:hover::before {
