@@ -27,6 +27,10 @@
 
 }
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 
 .header-conteiner {
   background: transparent;
@@ -78,7 +82,7 @@
   height: 2px;
   bottom: 0;
   width: 0;
-  transition: width 0.3s ease;
+  transition: width 0.4s ease;
 }
 
 
@@ -127,99 +131,177 @@
 }
 
 
-.first-section {
-  margin-right: 0px;
+
+.hero-section {
   position: relative;
-  background-size: auto 100%;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 60vh;
-  background-color: var(--cor-secundaria);
-}
-
-
-.first-section {
-  margin-right: 0px;
-  position: relative;
-  background-size: auto 100%;
-  background-position: 100% bottom; 
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 60vh;
-  background-color: var(--cor-secundaria);
-}
-
-.content-wrapper {
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
-  padding: 40px 60px; 
-  gap: 40px;
+  overflow: hidden;
+}
+
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
-.right-content {
-  margin-top: 96px;
-  display: flex;
-  flex-direction: column;
-  width: 55%; 
-  max-width: 700px; 
-  gap: 20px;
-  align-items: flex-start;
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.7) 0%,
+  rgba(0, 0, 0, 0.4) 50%,
+  rgba(0, 0, 0, 0.1) 100%
+  );
 }
 
-.text-right {
-  color: var(--cor-terciaria);
-  font-weight: 500;
-  font-size: 22px;
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+}
+
+
+.hero-text-wrapper {
+  max-width: 650px;
+}
+
+
+.hero-subtitle {
+  letter-spacing: 2px;
   font-family: var(--fonte-paragrado);
-  line-height: 1.6;
-  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cor-terciaria);
+  margin-bottom: 20px;
+  opacity: 0.85;
 }
 
 
-.btn-singup {
+.hero-title {
+  letter-spacing: 2px;
+  font-size: 78px;
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+  color: var(--cor-terciaria);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-description {
+  font-family: var(--fonte-paragrado);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cor-terciaria);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0.85;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.btn-primary,
+.btn-secondary {
   letter-spacing: 2px;
   font-family: var(--fonte-paragrado);
   text-transform: uppercase;
-  padding: 12px 32px; 
+  padding: 16px 40px;
   font-size: 14px;
-  width: auto; 
-  background: transparent;
-  border: 2px solid var(--cor-primaria);
-  color: var(--cor-terciaria);
+  font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: color 0.4s ease;
-  z-index: 0;
+  transition: all 0.4s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
 }
 
 
-.btn-singup::before {
+.btn-primary {
+  background: var(--cor-primaria);
+  color: white;
+  border: 2px solid var(--cor-primaria);
+}
+
+
+.btn-primary::before {
   content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--cor-primaria);
+  background: white;
   transition: left 0.4s ease;
-  z-index: -1; 
+  z-index: -1;
 }
 
 
-.btn-singup span {
-  position: relative;
-  z-index: 1;
+.btn-primary:hover {
+  color: var(--cor-terciaria);
 }
 
-.btn-singup:hover {
-  color: var(--cor-terciaria); 
+
+.btn-primary:hover::before {
+  left: 0;
 }
 
-.btn-singup:hover::before {
-  left: 0; 
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+
+.btn-secondary:hover {
+  color: #333;
+}
+
+
+.btn-secondary:hover::before {
+  left: 0;
 }
