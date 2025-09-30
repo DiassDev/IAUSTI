@@ -8,12 +8,17 @@
 }
 
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+
 :root {
   /*paleta de cores*/
   --cor-primaria: rgb(20, 112, 175);
   --cor-secundaria: rgb(142, 182, 220);
   --cor-terciaria: whitesmoke;
-  --cor-gradiente: ;
+  --cor-gradiente: rgb(15, 85, 131),rgb(20, 112, 175), rgb(142, 182, 220);
 
 
   /*fontes*/
@@ -32,6 +37,7 @@
 
 
 .header-content h1 {
+  letter-spacing: 2px;
   font-size: 28px;
   text-transform: uppercase;
   font-weight: bold;
@@ -54,6 +60,7 @@
 
 
 .header-navigation a{
+  letter-spacing: 2px;
   font-size: 18px;
   position: relative;
   text-decoration: none;
@@ -81,36 +88,138 @@
 
 
 .btn-login {
-      font-family: var(--fonte-paragrado);
-      text-transform: uppercase;
-      position: relative;
-      padding: 12px;
-      font-size: 14px;
-      color: black;
-      background: transparent;
-      border: 2px solid var(--cor-primaria);
-      border-radius: 4px;
-      cursor: pointer;
-      overflow: hidden;
-      transition: color 0.3s ease;
-    }
+  letter-spacing: 2px;
+  font-family: var(--fonte-paragrado);
+  text-transform: uppercase;
+  position: relative;
+  padding: 12px;
+  font-size: 14px;
+  color: black;
+  background: transparent;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
 
-    .btn-login::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--cor-primaria);
-      transition: left 0.3s ease;
-      z-index: -1;
-    }
 
-    .btn-login:hover {
-      color: var(--cor-terciaria);
-    }
+.btn-login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--cor-primaria);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
 
-    .btn-login:hover::before {
-      left: 0;
-    }
+
+.btn-login:hover {
+  color: var(--cor-terciaria);
+}
+
+
+.btn-login:hover::before {
+  left: 0;
+}
+
+
+.first-section {
+  margin-right: 0px;
+  position: relative;
+  background-size: auto 100%;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 60vh;
+  background-color: var(--cor-secundaria);
+}
+
+
+.first-section {
+  margin-right: 0px;
+  position: relative;
+  background-size: auto 100%;
+  background-position: 100% bottom; 
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 60vh;
+  background-color: var(--cor-secundaria);
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 40px 60px; 
+  gap: 40px;
+  height: 100%;
+}
+
+.right-content {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  width: 55%; 
+  max-width: 700px; 
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.text-right {
+  color: var(--cor-terciaria);
+  font-weight: 500;
+  font-size: 22px;
+  font-family: var(--fonte-paragrado);
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+.btn-singup {
+  letter-spacing: 2px;
+  font-family: var(--fonte-paragrado);
+  text-transform: uppercase;
+  padding: 12px 32px; 
+  font-size: 14px;
+  width: auto; 
+  background: transparent;
+  border: 2px solid var(--cor-primaria);
+  color: var(--cor-terciaria);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s ease;
+  z-index: 0;
+}
+
+
+.btn-singup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--cor-primaria);
+  transition: left 0.4s ease;
+  z-index: -1; 
+}
+
+
+.btn-singup span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-singup:hover {
+  color: var(--cor-terciaria); 
+}
+
+.btn-singup:hover::before {
+  left: 0; 
+}
