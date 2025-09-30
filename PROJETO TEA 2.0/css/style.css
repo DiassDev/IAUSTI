@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none ;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: var(--verde-escuro);
+}
+:root{
+    --verde-escuro: #326270;
+    --verde: #2f9364;
+    --orange: #ffffff;
+    --degrade-bnt: linear-gradient( #5F9EA0,#0d3d3d);
+    color-p: #a1a1a1;
+    color-p-2: #868585;
+}
+
+.background-verde{
+    background:var(--verde-escuro) ;
+}
+/* classes reutilizaveis */
+.container{
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+.btn-gradiente{
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-image: var(--degrade-bnt);
+}
+/* Classes do site */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+}
+.logo a{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+
+}
+.ul{
+    display: flex;
+    align-items: center;
+
+}
+.ul li{
+    margin: 0 35px;
+    font-size: 15px;
+
+}
+.ul li a{
+    color:white
+}
+/* main */
+
+pequeno garoto .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px ;
+}
+.main-text{
+    width: 50%;
+    color: rgb(255, 255, 255);
+}
+.main-text h1{
+    font-size: 4.5rem;
+}
+.main-text div{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+  .imagem-pequena{
+    width: 350px;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin-left: auto; /* joga pra direita */
+  margin-top: -150px;
+  }
+
+  .resultados {
+  background-color: #f7931e; /* fundo laranja */
+  color: white;
+  padding: 40px 20px;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-top: px; /* <--abaixar linha laranja */
+}
+
+.resultados-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.resultados-numeros {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.resultados-numeros .bloco {
+  text-align: center;
+  min-width: 120px;
+}
+
+.resultados-numeros .numero {
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+}
+
+.resultados-numeros .legenda {
+  font-size: 16px;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+
+ 
+
+/* section diferenciais */
+.diferenciais .container{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px auto;
+}
+.diferenciais .card{
+  width: 30%;
+  cursor: pointer;
+  padding: 30px;
+  border-radius: 15px ;
+  transition: 0.3s;
+
+
+}
+.diferenciais .card:hover{
+box-shadow: 0px 10px 67px 8px #ffffff
+}
+  
+.diferenciais .card img{
+  width: 60px;
+}
+.diferenciais .card .titulo{
+  margin: 13px 0;
+  font-weight:600;
+
+}
+
+
+
+/*responsivo*/
+@media (max-width: 960px){
+
+}
+@media (max-width: 440px){
+
+}
+
+
+.logo img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  margin-top: -10px;
+  padding: 0;
+}
+  
