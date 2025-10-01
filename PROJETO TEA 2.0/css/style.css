@@ -289,3 +289,81 @@ html, body {
 .btn-secondary:hover::before {
   left: 0;
 }
+
+
+.section-2 {
+  background-color: var(--cor-primaria);
+  display: flex;
+  justify-content: center;     
+  align-items: stretch;       
+  gap: 24px;                  
+  padding: 60px 40px;
+}
+
+.right-conteiner, 
+.middle-conteiner, 
+.left-conteiner {
+  flex: 0 1 30%;
+  margin-top: 150px;                     
+  min-height: 350px;           
+  max-width: 400px;           
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 32px 20px;
+  background-color: var(--cor-terciaria);
+  border-radius: 8px;
+  box-shadow: 0 12px 12px rgba(0,0,0,0.15);
+}
+
+
+
+#user-icon, #calendar-icon, #smile-icon {
+  color: rgb(2, 1, 71);
+  font-size: 82px;
+  margin: 8px 0 32px 0;
+  font-weight: 600;
+}
+
+
+.right-text, .middle-text, .left-text {
+  opacity: 0.9;
+  color: black;
+  font-family: var(--fonte-titulo);
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 35px;
+  margin-bottom: 16px;
+}
+
+
+.right-subtext, .middle-subtext, .left-subtext {
+  opacity: 0.9;
+  color: black;
+  padding: 16px;
+  font-family: var(--fonte-paragrado);
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-2 > div {
+  opacity: 0; 
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-2 > div.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
