@@ -19,6 +19,7 @@
   --cor-secundaria: rgb(142, 182, 220);
   --cor-terciaria: whitesmoke;
   --cor-gradiente: rgb(15, 85, 131),rgb(20, 112, 175), rgb(142, 182, 220);
+  --cor-hover-simples: rgb(16, 88, 136);
 
 
   /*fontes*/
@@ -96,7 +97,7 @@ html, body {
   font-family: var(--fonte-paragrado);
   text-transform: uppercase;
   position: relative;
-  padding: 12px;
+  padding: 16px 40px;
   font-size: 14px;
   color: black;
   background: transparent;
@@ -254,26 +255,9 @@ html, body {
 }
 
 
-.btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: white;
-  transition: left 0.4s ease;
-  z-index: -1;
-}
-
-
 .btn-primary:hover {
-  color: var(--cor-terciaria);
-}
-
-
-.btn-primary:hover::before {
-  left: 0;
+  background-color: var(--cor-hover-simples);
+  border: 2px solid var(--cor-hover-simples);
 }
 
 
