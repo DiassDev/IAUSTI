@@ -28,6 +28,20 @@
 
 }
 
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 html, body {
   scroll-behavior: smooth;
 }
@@ -304,6 +318,7 @@ html, body {
 .right-conteiner, 
 .middle-conteiner, 
 .left-conteiner {
+  cursor: pointer;
   flex: 0 1 30%;
   margin-top: 100px;
   margin-bottom: 100px;                     
@@ -318,8 +333,6 @@ html, body {
   border-radius: 8px;
   box-shadow: 0 12px 12px rgba(0,0,0,0.15);
 }
-
-
 
 #user-icon, #calendar-icon, #smile-icon {
   color: rgb(2, 1, 71);
@@ -349,17 +362,6 @@ html, body {
   font-size: 16px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .section-2 > div {
   opacity: 0; 
   transform: translateY(30px);
@@ -372,7 +374,7 @@ html, body {
 
 
 .section-3 {
-  background: #f9f9f9; /* branco suave */
+  background: #f9f9f9;
   padding: 80px 10%;
 }
 
@@ -387,10 +389,11 @@ html, body {
   flex: 1.5;
 }
 
+
 .section-3-text h2 {
   letter-spacing: 2px;
   font-family: var(--fonte-titulo);
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--primary-color);
   margin-bottom: 20px;
   border-left: 6px solid var(--primary-color);
@@ -420,7 +423,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  margin-top: 226px;
+  margin-top: 100px;
 }
 
 .feature-card {
