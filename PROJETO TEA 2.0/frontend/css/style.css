@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+:root {
+  /*paleta de cores*/
+  --cor-primaria: rgb(20, 112, 175);
+  --cor-secundaria: rgb(142, 182, 220);
+  --cor-terciaria: whitesmoke;
+  --cor-gradiente: rgb(15, 85, 131),rgb(20, 112, 175), rgb(142, 182, 220);
+  --cor-hover-simples: rgb(16, 88, 136);
+
+
+  /*fontes*/
+  --fonte-titulo: "Ubuntu", sans-serif;
+  --fonte-paragrado:"Inter", sans-serif;
+
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+
+.header-conteiner {
+  background: transparent;
+  min-width: 100vh;
+  min-height: 96px;
+
+}
+
+
+.header-content h1 {
+  letter-spacing: 2px;
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--fonte-titulo);
+}
+
+
+.header-content {
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.header-navigation {
+  display: flex;
+  gap: 36px;
+}
+
+
+.header-navigation a{
+  letter-spacing: 2px;
+  font-size: 18px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  font-family: var(--fonte-paragrado);
+}
+
+
+.header-navigation a::after {
+  content: '';
+  position: absolute;
+  background: black;
+  left: 0;
+  height: 2px;
+  bottom: 0;
+  width: 0;
+  transition: width 0.4s ease;
+}
+
+
+.header-navigation a:hover::after {
+  width: 100%;
+}
+
+
+.btn-login {
+  letter-spacing: 2px;
+  font-family: var(--fonte-paragrado);
+  text-transform: uppercase;
+  position: relative;
+  padding: 16px 40px;
+  font-size: 14px;
+  color: black;
+  background: transparent;
+  border: 2px solid var(--cor-primaria);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+
+.btn-login::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--cor-primaria);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+
+.btn-login:hover {
+  color: var(--cor-terciaria);
+}
+
+
+.btn-login:hover::before {
+  left: 0;
+}
+
+
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+  to right,
+  rgba(0, 0, 0, 0.7) 0%,
+  rgba(0, 0, 0, 0.4) 50%,
+  rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+}
+
+
+.hero-text-wrapper {
+  max-width: 650px;
+}
+
+
+.hero-subtitle {
+  letter-spacing: 2px;
+  font-family: var(--fonte-paragrado);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--cor-terciaria);
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+
+
+.hero-title {
+  letter-spacing: 2px;
+  font-size: 78px;
+  font-weight: 700;
+  font-family: var(--fonte-titulo);
+  color: var(--cor-terciaria);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-description {
+  font-family: var(--fonte-paragrado);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cor-terciaria);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0.85;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.btn-primary,
+.btn-secondary {
+  letter-spacing: 2px;
+  font-family: var(--fonte-paragrado);
+  text-transform: uppercase;
+  padding: 16px 40px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.btn-primary {
+  background: var(--cor-primaria);
+  color: white;
+  border: 2px solid var(--cor-primaria);
+}
+
+
+.btn-primary:hover {
+  background-color: var(--cor-hover-simples);
+  border: 2px solid var(--cor-hover-simples);
+}
+
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+
+.btn-secondary:hover {
+  color: #333;
+}
+
+
+.btn-secondary:hover::before {
+  left: 0;
+}
+
+
+.section-2 {
+  background-color: var(--cor-primaria);
+  display: flex;
+  justify-content: center;     
+  align-items: stretch;       
+  gap: 24px;                  
+  padding: 60px 40px;
+}
+
+
+.right-conteiner, 
+.middle-conteiner, 
+.left-conteiner {
+  flex: 0 1 30%;
+  margin-top: 100px;
+  margin-bottom: 100px;                     
+  min-height: 350px;           
+  max-width: 400px;           
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; 
+  padding: 32px 20px;
+  background-color: var(--cor-terciaria);
+  border-radius: 8px;
+  box-shadow: 0 12px 12px rgba(0,0,0,0.15);
+}
+
+
+
+#user-icon, #calendar-icon, #smile-icon {
+  color: rgb(2, 1, 71);
+  font-size: 82px;
+  margin: 8px 0 32px 0;
+  font-weight: 600;
+}
+
+
+.right-text, .middle-text, .left-text {
+  opacity: 0.9;
+  color: black;
+  font-family: var(--fonte-titulo);
+  font-weight: bolder;
+  letter-spacing: 2px;
+  font-size: 35px;
+  margin-bottom: 16px;
+}
+
+
+.right-subtext, .middle-subtext, .left-subtext {
+  opacity: 0.9;
+  color: black;
+  padding: 16px;
+  font-family: var(--fonte-paragrado);
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-2 > div {
+  opacity: 0; 
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-2 > div.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
