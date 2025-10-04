@@ -1,21 +1,20 @@
 // Regex patterns
 const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-const senhaRegex = /^.{8,}$/; // Google apenas requer mínimo de 8 caracteres
+const senhaRegex = /^.{8,}$/;
 
-// Elementos do formulário
-const form = document.getElementById('loginForm');
+const form = document.getElementById('cadastroForm');
+const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const senhaInput = document.getElementById('senha');
+const confirmarSenhaInput = document.getElementById('confirmarSenha');
 
 // Função para criar mensagem de erro
 function criarMensagemErro(input, mensagem) {
-  // Remove mensagem de erro anterior se existir
   const erroExistente = input.parentElement.querySelector('.erro-mensagem');
   if (erroExistente) {
     erroExistente.remove();
   }
 
-  // Cria nova mensagem de erro
   const erroDiv = document.createElement('div');
   erroDiv.className = 'erro-mensagem';
   erroDiv.textContent = mensagem;
@@ -44,7 +43,7 @@ emailInput.addEventListener('blur', function() {
   if (email === '') {
     criarMensagemErro(this, 'O email é obrigatório');
   } else if (!emailRegex.test(email)) {
-    criarMensagemErro(this, 'Digite um email válido (ex: usuario@email.com)');
+    criarMensagemErro(this, 'Digite um email válido');
   } else {
     removerMensagemErro(this);
   }
@@ -71,14 +70,43 @@ senhaInput.addEventListener('focus', function() {
   removerMensagemErro(this);
 });
 
-// Validação no submit do formulário
-form.addEventListener('submit', function(e) {
+// Validação da confirmação de senha
+confirmarSenhaInput.addEventListener('blur', function() {
+  const senha = senhaInput.value;
+  const confirmarSenha = this.value;
+  
+  if (confirmarSenha === '') {
+    criarMensagemErro(this, 'Confirme sua senha');
+  } else if (senha !== confirmarSenha) {
+    criarMensagemErro(this, 'As senhas não coincidem');
+  } else {
+    removerMensagemErro(this);
+  }
+});
+
+confirmarSenhaInput.addEventListener('focus', function() {
+  removerMensagemErro(this);
+});
+
+// Submit do formulário
+form.addEventListener('submit', async function(e) {
   e.preventDefault();
   
+  const name = nameInput.value.trim();
   const email = emailInput.value.trim();
   const senha = senhaInput.value;
+  const confirmarSenha = confirmarSenhaInput.value;
   
   let temErro = false;
+  
+  // Valida nome
+  if (name === '') {
+    criarMensagemErro(nameInput, 'O nome é obrigatório');
+    temErro = true;
+  } else if (name.length < 3) {
+    criarMensagemErro(nameInput, 'O nome deve ter no mínimo 3 caracteres');
+    temErro = true;
+  }
   
   // Valida email
   if (email === '') {
@@ -98,15 +126,43 @@ form.addEventListener('submit', function(e) {
     temErro = true;
   }
   
-  // Se não houver erros, submete o formulário
+  // Valida confirmação de senha
+  if (confirmarSenha === '') {
+    criarMensagemErro(confirmarSenhaInput, 'Confirme sua senha');
+    temErro = true;
+  } else if (senha !== confirmarSenha) {
+    criarMensagemErro(confirmarSenhaInput, 'As senhas não coincidem');
+    temErro = true;
+  }
+  
+  // Se não houver erros, faz a requisição
   if (!temErro) {
-    console.log('Formulário válido!');
-    console.log('Email:', email);
-    console.log('Senha:', senha);
-    
-    // Aqui você pode fazer a requisição para o backend
-    // fetch('/api/login', { method: 'POST', body: JSON.stringify({ email, senha }) })
-    
-    alert('Login realizado com sucesso!');
+    try {
+      const response = await fetch('http://localhost:3000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, senha })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.success) {
+        // Salva o token no localStorage
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        
+        
+        // Redireciona para home
+        window.location.href = 'home.html';
+      } else {
+        // Mostra erro do servidor
+        alert(data.message || 'Erro ao realizar cadastro');
+      }
+    } catch (error) {
+      console.error('Erro:', error);
+      alert('Erro ao conectar com o servidor. Verifique se o backend está rodando.');
+    }
   }
 });
