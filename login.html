@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto TEA - Entrar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Projeto TEA</title>
+  <link rel="stylesheet" href="./PROJETO TEA 2.0/frontend/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 <body>
+  <section class="login-page">
     
+    <div class="login-container">
+      <div class="login-box">
+        <h1>Olá,<br><strong>Bem-vindo(a)!</strong></h1>
+        <p class="subtitle">Pronto para descomplicar sua vida acadêmica ?</p>
+
+        <form id="loginForm">
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+          </div>
+
+          <div class="input-group">
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+          </div>
+
+          <div class="form-options">
+            <label><input type="checkbox"> Lembre-se de mim</label>
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+
+          <button type="submit" class="btn-entrar">Entrar</button>
+
+          <p class="register-link">Não tem uma conta? <a href="#">Cadastre-se</a></p>
+        </form>
+      </div>
+    </div>
+
+    
+    <div class="login-image">
+      <img src="./PROJETO TEA 2.0/frontend/assets/images/estudante feliz.jpg" alt="Ilustração Projeto TEA">
+    </div>
+  </section>
 </body>
 </html>
