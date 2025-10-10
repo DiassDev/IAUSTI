@@ -25,13 +25,3 @@ model User {
 
   @@map("users")
 }
-
-// Construir a tabela dos Cursos
-model Cursos { 
-
-}
-
-// Construir a tabela de Aulas
-model Aulas {
-
-}
