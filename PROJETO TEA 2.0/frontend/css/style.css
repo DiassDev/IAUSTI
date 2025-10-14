@@ -397,7 +397,6 @@ html, body {
   color: var(--primary-color);
   margin-bottom: 20px;
   border-left: 6px solid var(--primary-color);
-  padding-left: 12px;
 }
 
 .section-3-text p {
