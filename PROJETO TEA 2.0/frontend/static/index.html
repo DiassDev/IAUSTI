@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
       integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./PROJETO TEA 2.0/frontend/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IAUSTI - Transformando vidas</title>
@@ -25,14 +26,14 @@
 
 
   <section id="section-1" class="hero-section">
-    <img src="./PROJETO TEA 2.0/frontend/assets/images/imagem-estudo2.jpg" 
+    <img src="../assets/images/imagem-estudo2.jpg" 
          alt="Estudo ilustração" 
          class="hero-background">
     
 
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-text-wrapper">
+      <div class="hero-text-wrapper" data-aos="fade-right" data-aos-duration="1000">
         <p class="hero-subtitle">Cuidado personalizado para seus estudos</p>
         <h2 class="hero-title">Autismo e Inclusão</h2>
         <p class="hero-description">
@@ -48,14 +49,14 @@
   </section>
 
   <section id="section-2" class="section-2">
-    <div class="right-conteiner fade-in">
+    <div class="right-conteiner" data-aos="fade-left" data-aos-duration="1000">
       <i class="fa-solid fa-circle-user" id="user-icon"></i>
       <h3 class="right-text">Estudo direcionado</h3>
       <p class="right-subtext">Construindo pontes para que pessoas com escpetro autista
         alcancem seu potencial acadêmico com autonomia, inclusão e dignidade
       </p>
     </div>
-    <div class="middle-conteiner fade-in">
+    <div class="middle-conteiner" data-aos="fade-left" data-aos-duration="1000">
       <i class="fa-solid fa-calendar" id="calendar-icon"></i>
       <h3 class="middle-text">Praticidade</h3>
       <p class="middle-subtext">Simples de usar, feito para você. Tudo que você precisa, sem complicação. 
@@ -63,7 +64,7 @@
       Menos esforço, mais resultado.
       </p>
     </div>
-    <div class="left-conteiner fade-in">
+    <div class="left-conteiner" data-aos="fade-left" data-aos-duration="1000">
       <i class="fa-solid fa-face-smile" id="smile-icon"></i>
       <h3 class="left-text">Inclusão</h3>
       <p class="left-subtext">Um caminho de aprendizado construído para acolher cada diferença, respeitando ritmos e potencialidades.  
@@ -73,13 +74,13 @@
     </div>
   </section>
 
-  <section id="section-3" class="section-3 fade-in">
-  <div class="section-3-conteiner">
-    <img class="right-img fade-in" src="./PROJETO TEA 2.0/frontend/assets/images/imagem-estudo.jpg" alt="estudando">
+  <section id="section-3" class="section-3">
+  <div class="section-3-conteiner" data-aos="fade-right" data-aos-duration="1000">
+    <img class="right-img" src="../assets/images/imagem-estudo.jpg" alt="estudando">
     
     <div class="section-3-text">
-      <h2 class="section-3-left-title fade-in">Objetivo</h2>
-      <p class="section-3-left-subtext fade-in">
+      <h2 class="section-3-left-title">Objetivo</h2>
+      <p class="section-3-left-subtext">
         O IAUST nasce com o propósito de transformar a jornada acadêmica de estudantes no espectro autista, 
         oferecendo suporte personalizado que valoriza suas habilidades e respeita seus ritmos. 
         Nossa metodologia busca criar um ambiente inclusivo, no qual cada conquista é celebrada 
@@ -88,25 +89,25 @@
         o fortalecimento da confiança e do sentimento de pertencimento de cada aluno.
       </p>
       <div class="features-cards">
-        <div class="feature-card fade-in">
+        <div class="feature-card">
         <i class="fa-solid fa-book-open"></i>
         <h3>Aprendizado Inclusivo</h3>
         <p>Materiais adaptados para diferentes estilos de aprendizado, garantindo acesso igualitário.</p>
       </div>
 
-      <div class="feature-card fade-in">
+      <div class="feature-card">
         <i class="fa-solid fa-universal-access"></i>
         <h3>Acessibilidade</h3>
         <p>Design acessível com foco em usabilidade, leitura simplificada e compatibilidade.</p>
       </div>
 
-      <div class="feature-card fade-in">
+      <div class="feature-card">
         <i class="fa-solid fa-users"></i>
         <h3>Comunidade</h3>
         <p>Espaço colaborativo para troca de experiências entre estudantes e educadores.</p>
       </div>
 
-      <div class="feature-card fade-in">
+      <div class="feature-card">
         <i class="fa-solid fa-chalkboard-user"></i>
         <h3>Acompanhamento</h3>
         <p>Ferramentas para acompanhar o progresso individual e coletivo.</p>
@@ -116,13 +117,13 @@
   </div>
 </section>
 <footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-about fade-in">
-      <h3>Projeto TEA</h3>
+  <div class="footer-container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="footer-about">
+      <h3>IAUSTI</h3>
       <p>Transformando a jornada acadêmica de estudantes no espectro autista com suporte inclusivo e personalizado.</p>
     </div>
 
-    <div class="footer-links fade-in">
+    <div class="footer-links">
       <h4>Links Úteis</h4>
       <ul>
         <li><a href="#section-1">Início</a></li>
@@ -131,7 +132,7 @@
       </ul>
     </div>
 
-    <div class="footer-contact fade-in">
+    <div class="footer-contact">
       <h4>Contato</h4>
       <p>Email: dias.contatodev@gmail.com</p>
       <p>Telefone: +55 11 99999-9999</p>
@@ -143,7 +144,7 @@
     </div>
   </div>
 
-  <div class="footer-bottom fade-in">
+  <div class="footer-bottom">
     <p>© 2025 Projeto TEA. Todos os direitos reservados.</p>
   </div>
 </footer>
@@ -152,5 +153,9 @@
 
 <script src="./PROJETO TEA 2.0/frontend/js/effects.js"></script>
 <script src="./PROJETO TEA 2.0/frontend/js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>
