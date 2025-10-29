@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="window.location.href='./podcast.html'">
                 <div class="card-icon icon-orange"><i class="fa-solid fa-headset"></i></div>
                 <h3>Podcasts Educativos</h3>
                 <p>Conteúdo em áudio para aprender enquanto faz outras atividades. Transcrições disponíveis.</p>
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" onclick="openInvite()">
                 <div class="card-icon icon-teal"><i class="fa-solid fa-message"></i></div>
                 <h3>Comunidade</h3>
                 <p>Participe de fóruns e grupos de estudo. Troque experiências com outros estudantes e tire dúvidas.</p>
@@ -131,5 +131,20 @@
   </div>
 </footer>
     <script src="./PROJETO TEA 2.0/frontend/js/effects.js"></script>
+    <script>
+        function openInvite() {
+            const link = 'https://chat.whatsapp.com/GKKeWVuIxfRL6nnSR6j8qp';
+
+            if (/Android|iPhone|iPod/i.test(navigator.userAgent)) {
+                window.location.href = 'https://chat.whatsapp.com/GKKeWVuIxfRL6nnSR6j8qp';
+
+                setTimeout (() => {
+                    window.open(link, '_blank');
+                }, 2000);
+            } else {
+                window.open(link, '_blank');
+            }
+        }
+    </script>
 </body>
 </html>
