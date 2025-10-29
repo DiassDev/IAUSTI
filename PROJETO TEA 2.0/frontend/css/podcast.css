@@ -1,0 +1,559 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+:root {
+  /* paleta de cores */
+  --cor-primaria: rgb(20, 112, 175);
+  --cor-secundaria: rgb(142, 182, 220);
+  --cor-terciaria: whitesmoke;
+  --cor-gradiente: rgb(15, 85, 131), rgb(20, 112, 175), rgb(142, 182, 220);
+  --cor-hover-simples: rgb(16, 88, 136);
+
+  /* fontes */
+  --fonte-titulo: "Ubuntu", sans-serif;
+  --fonte-paragrado: "Inter", sans-serif;
+}
+
+
+
+
+/* Body */
+body {
+    font-family: var(--fonte-paragrado);
+    background: var(--cor-terciaria);
+    color: black;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebar {
+    width: 240px;
+    background: var(--cor-primaria);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--fonte-titulo);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: #4a9eff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.menu-title {
+    font-family: var(--fonte-titulo);
+    font-size: 11px;
+    color: var(--cor-terciaria);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    font-family: var(--fonte-paragrado);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+    color: var(--cor-terciaria);
+    margin-bottom: 5px;
+}
+
+.menu-item:hover {
+    transition: 0.3s ease-in-out;
+    background: var(--cor-hover-simples);
+    color: #ffffff;
+}
+
+.menu-item.active {
+    background: #4a9eff;
+    color: #ffffff;
+}
+
+.menu-item i {
+    width: 20px;
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    opacity: 0.8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: #4a9eff;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user-email {
+    font-size: 11px;
+    color: #888;
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+.section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #888;
+}
+
+/* ============================================
+   CAROUSEL / TRENDING
+   ============================================ */
+.carousel {
+    position: relative;
+    background: linear-gradient(135deg, #0074f8, #000000);
+    border-radius: 20px;
+    padding: 60px;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-content {
+    text-align: center;
+}
+
+.carousel-content h2 {
+    color: var(--cor-terciaria);
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.carousel-content p {
+    color: var(--cor-terciaria);
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-nav.prev {
+    left: 20px;
+}
+
+.carousel-nav.next {
+    right: 20px;
+}
+
+/* ============================================
+   PODCAST GRID
+   ============================================ */
+.podcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.podcast-card {
+    color: var(--cor-terciaria);
+    background: var(--cor-primaria);
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.podcast-card:hover {
+    transition: 0.2s ease-out; 
+    background-color: var(--cor-hover-simples);
+    transform: translateY(-5px);
+}
+
+.podcast-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    background-size: cover;       
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.podcast-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.podcast-author {
+    font-size: 13px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+}
+
+/* ============================================
+   PLAYLIST / RECENTLY PLAYED
+   ============================================ */
+.playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.playlist-item {
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-paragrado);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--cor-primaria);
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.playlist-item:hover {
+    transition: 0.3s ease-in-out;
+    background: var(--cor-hover-simples);
+}
+
+.playlist-number {
+    font-family: var(--fonte-titulo);
+    font-size: 14px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+    width: 20px;
+}
+
+.playlist-cover {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    border-radius: 6px;
+    background-size: cover;       
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.playlist-info {
+    flex: 1;
+}
+
+.playlist-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.playlist-subtitle {
+    font-size: 12px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+}
+
+.playlist-duration {
+    font-size: 12px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+    margin-right: 15px;
+}
+
+.playlist-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ============================================
+   RIGHT SIDEBAR - NOW PLAYING
+   ============================================ */
+.right-sidebar {
+    color: var(--cor-terciaria);
+    width: 300px;
+    background: var(--cor-primaria);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.now-playing {
+    margin-bottom: 30px;
+}
+
+.now-playing-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.player-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background-size: cover;       
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.player-info h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.player-info p {
+    font-family: var(--fonte-paragrado);
+    font-size: 13px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+}
+
+.progress-bar {
+    margin: 20px 0;
+}
+
+.progress-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    position: relative;
+}
+
+.progress-fill {
+    width: 40%;
+    height: 100%;
+    background: var(--cor-secundaria);
+    border-radius: 2px;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    background: #4a9eff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ============================================
+   TOP PODCASTER
+   ============================================ */
+.top-section-title {
+    font-family: var(--fonte-titulo);
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--cor-terciaria);
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.podcaster-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.podcaster-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.podcaster-rank {
+    font-size: 14px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+    width: 20px;
+}
+
+.podcaster-avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    border-radius: 50%;
+}
+
+.podcaster-info {
+    flex: 1;
+}
+
+.podcaster-name {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.podcaster-followers {
+    font-size: 11px;
+    color: var(--cor-terciaria);
+    opacity: 0.8;
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}

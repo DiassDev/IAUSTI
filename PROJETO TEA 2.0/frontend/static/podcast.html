@@ -1,11 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../css/podcast.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAUSTI - Podcast </title>
+    <title>IAUSTI - Podcast</title>
 </head>
 <body>
-    
+     <div class="sidebar">
+        <div>
+            <div class="logo">
+                <div class="logo-icon">
+                </div>
+                <span>IAUSTI</span>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-title">Menu</div>
+                <div class="menu-item active">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Descubra</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-fire"></i>
+                    <span>Em alta</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-tower-broadcast"></i>
+                    <span>Ao vivo</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Salvos</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Favoritos</span>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-title">Outros</div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-signal"></i>
+                    <span>Transmissões</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Comunidade</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span>Assistir mais tarde</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Configurações</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item" onclick="window.location.href='./index.html'">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Sair</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Descubra</h1>
+            <div class="header-actions">
+                <button class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn"><i class="fa-solid fa-bell"></i></button>
+                <div class="user-profile">
+                    <div class="user-avatar"></div>
+                    <div class="user-info">
+                        <div class="user-name">{Usuário}</div>
+                        <div class="user-email">{emailexemplo@gmail.com}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Podcasts -->
+        <div class="section">
+            <div class="section-title">Em alta</div>
+            <div class="carousel">
+                <button class="carousel-nav prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-content">
+                    <h2>O AUTISMO E A SUA INSERÇÃO NO ENSINO SUPERIOR</h2>
+                    <p>ISRAEL DANTAS</p>
+                </div>
+                <button class="carousel-nav next"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Most Popular -->
+        <div class="section">
+            <div class="section-title">Populares</div>
+            <div class="podcast-grid">
+                <div class="podcast-card">
+                    <div class="podcast-cover" style="background-image: url('../assets/images/kidzin.jpg');">
+                        
+                    </div>
+                    <div class="podcast-title">O autismo e a sua inserção no ensino superior</div>
+                    <div class="podcast-author">Israel Dantas</div>
+                </div>
+                <div class="podcast-card">
+                    <div class="podcast-cover" style="background-image: url('../assets/images/fundo-humano-aperto-de-mao-robo-era-digital-futurista.jpg');">
+                        
+                    </div>
+                    <div class="podcast-title">Uso de IA como ferramenta de apoio aos autistas</div>
+                    <div class="podcast-author">Israel Dantas</div>
+                </div>
+                <div class="podcast-card">
+                    <div class="podcast-cover" style="background-image: url('../assets/images/conceito-de-fundo-de-programacao.jpg');">
+                        
+                    </div>
+                    <div class="podcast-title">Programação web do jeito simples</div>
+                    <div class="podcast-author">Pedro Dias</div>
+                </div>
+                <div class="podcast-card">
+                    <div class="podcast-cover" style="background-image: url('../assets/images/lindos-detalhes-de-fibra-otica.jpg');">
+                    </div>
+                    <div class="podcast-title">A topologia de redes simplificada</div>
+                    <div class="podcast-author">Juan Lopes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recently Played -->
+        <div class="section">
+            <div class="section-title">Vistos recentemente</div>
+            <div class="playlist">
+                <div class="playlist-item">
+                    <div class="playlist-number">01</div>
+                    <div class="playlist-cover" style="background-image: url('../assets/images/kidzin.jpg');"></div>
+                    <div class="playlist-info">
+                        <div class="playlist-title">O autismo e sua inserção no ensino superior</div>
+                        <div class="playlist-subtitle">Isarel Dantas</div>
+                    </div>
+                    <div class="playlist-duration">01:01</div>
+                    <div class="playlist-actions">
+                        <button class="action-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                </div>
+                <div class="playlist-item">
+                    <div class="playlist-number">02</div>
+                    <div class="playlist-cover" style="background-image: url('../assets/images/fundo-humano-aperto-de-mao-robo-era-digital-futurista.jpg');"></div>
+                    <div class="playlist-info">
+                        <div class="playlist-title">Uso de IA como ferramenta de apoio aos autistas</div>
+                        <div class="playlist-subtitle">Israel Dantas</div>
+                    </div>
+                    <div class="playlist-duration">01:31</div>
+                    <div class="playlist-actions">
+                        <button class="action-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-btn"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Sidebar - Now Playing -->
+    <div class="right-sidebar">
+        <div class="now-playing">
+            <div class="now-playing-title">Escutando agora</div>
+            <div class="player-cover" style="background-image: url('../assets/images/kidzin.jpg');"></div>
+            <div class="player-info">
+                <h3>O autismo e a sua inserção no ensino superior</h3>
+                <p>Israel Dantas</p>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-time">
+                    <span>0:24</span>
+                    <span>01:01</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn"><i class="fa-solid fa-backward-step"></i></button>
+                <button class="play-btn"><i class="fa-solid fa-play"></i></button>
+                <button class="control-btn"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+        </div>
+
+        <div>
+            <div class="top-section-title">Autores em alta</div>
+            <div class="podcaster-list">
+                <div class="podcaster-item">
+                    <div class="podcaster-rank">01</div>
+                    <div class="podcaster-avatar"></div>
+                    <div class="podcaster-info">
+                        <div class="podcaster-name">Israel Dantas</div>
+                        <div class="podcaster-followers">120.09 seguidores</div>
+                    </div>
+                </div>
+                <div class="podcaster-item">
+                    <div class="podcaster-rank">02</div>
+                    <div class="podcaster-avatar" style="background: linear-gradient(135deg, #3B82F6, #1D4ED8);"></div>
+                    <div class="podcaster-info">
+                        <div class="podcaster-name">Gabriel Ronald</div>
+                        <div class="podcaster-followers">98.120 seguidores</div>
+                    </div>
+                </div>
+                <div class="podcaster-item">
+                    <div class="podcaster-rank">03</div>
+                    <div class="podcaster-avatar" style="background: linear-gradient(135deg, #F59E0B, #D97706);"></div>
+                    <div class="podcaster-info">
+                        <div class="podcaster-name">Juan Lopes</div>
+                        <div class="podcaster-followers">94.120 seguidores</div>
+                    </div>
+                </div>
+                <div class="podcaster-item">
+                    <div class="podcaster-rank">04</div>
+                    <div class="podcaster-avatar" style="background: linear-gradient(135deg, #8B5CF6, #6D28D9);"></div>
+                    <div class="podcaster-info">
+                        <div class="podcaster-name">Pedro Dias</div>
+                        <div class="podcaster-followers">85.120 seguidores</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
